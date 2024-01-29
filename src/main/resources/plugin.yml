@@ -1,0 +1,4 @@
+name: RandomizerPlugin
+version: '${project.version}'
+main: net.fameless.randomizerplugin.RandomizerPlugin
+api-version: '1.20'
