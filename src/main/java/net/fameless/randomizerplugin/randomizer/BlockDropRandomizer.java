@@ -1,7 +1,11 @@
-package net.fameless.randomizerplugin;
+package net.fameless.randomizerplugin.randomizer;
 
+import com.destroystokyo.paper.event.block.BlockDestroyEvent;
 import com.google.gson.JsonElement;
+import net.fameless.randomizerplugin.DataFile;
+import net.fameless.randomizerplugin.SettingsMenu;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -29,19 +33,30 @@ public class BlockDropRandomizer implements Listener {
     }
 
     @EventHandler(ignoreCancelled = true)
+    public void onBlockDestroy(BlockDestroyEvent event) {
+        if (!settingsMenu.isRandomizeBlockDrops()) return;
+        event.setWillDrop(false);
+        drop(event.getBlock());
+    }
+
+    @EventHandler(ignoreCancelled = true)
     public void onBlockBreak(BlockBreakEvent event) {
         if (!settingsMenu.isRandomizeBlockDrops()) return;
         event.setDropItems(false);
-        if (!materialHashMap.containsKey(event.getBlock().getType())) {
-            Material newDrop = availableItems.get(random.nextInt(availableItems.size()));
-            materialHashMap.put(event.getBlock().getType(), newDrop);
-            event.getBlock().getWorld().dropItemNaturally(event.getBlock().getLocation(), new ItemStack(newDrop));
-            return;
-        }
-        event.getBlock().getWorld().dropItemNaturally(event.getBlock().getLocation(), new ItemStack(materialHashMap.get(event.getBlock().getType())));
+        drop(event.getBlock());
     }
 
     public HashMap<Material, Material> getMaterialHashMap() {
         return materialHashMap;
+    }
+
+    private void drop(Block block) {
+        if (!materialHashMap.containsKey(block.getType())) {
+            Material newDrop = availableItems.get(random.nextInt(availableItems.size()));
+            materialHashMap.put(block.getType(), newDrop);
+            block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(newDrop));
+            return;
+        }
+        block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(materialHashMap.get(block.getType())));
     }
 }

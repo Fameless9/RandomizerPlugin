@@ -1,7 +1,10 @@
-package net.fameless.randomizerplugin;
+package net.fameless.randomizerplugin.randomizer;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import net.fameless.randomizerplugin.DataFile;
+import net.fameless.randomizerplugin.RandomizerPlugin;
+import net.fameless.randomizerplugin.SettingsMenu;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;

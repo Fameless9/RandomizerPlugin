@@ -1,4 +1,10 @@
-package net.fameless.allitems.util;
+package net.fameless.randomizerplugin.util;
+
+/*
+ * ------------------------------------------
+ * Private Custom Skull Provider by Fameless9
+ * ------------------------------------------
+ */
 
 import com.destroystokyo.paper.profile.PlayerProfile;
 import com.destroystokyo.paper.profile.ProfileProperty;
@@ -33,7 +39,7 @@ public enum Head {
         try {
             itemStack = getSkull(texture);
         } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("[Randomizer] An Exception has occurred. Please contact me on Discord: fameless9. ID=0");
         }
     }
 

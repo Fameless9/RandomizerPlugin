@@ -1,0 +1,52 @@
+# Set the chance a chest slot contains an item (0.25 = 25%)
+slot-contains-item-chance: 0.25
+chest-item-amount-min: 1
+chest-item-amount-max: 5
+
+# Exclude items that cannot drop or appear in chests, drops and crafting menus. List of valid items: https://mcutils.com/item-ids
+exclude:
+  - WATER
+  - DECORATED_POT
+  - POWDER_SNOW
+  - CHAIN_COMMAND_BLOCK
+  - WATER_CAULDRON
+  - LAVA_CAULDRON
+  - COMMAND_BLOCK_MINECART
+  - COMMAND_BLOCK
+  - POWDER_SNOW_CAULDRON
+  - REPEATING_COMMAND_BLOCK
+  - BEDROCK
+  - AIR
+  - FIRE
+  - SOUL_FIRE
+  - END_PORTAL_FRAME
+  - NETHER_PORTAL
+  - END_PORTAL
+  - CHAINMAIL_HELMET
+  - CHAINMAIL_LEGGINGS
+  - CHAINMAIL_CHESTPLATE
+  - CHAINMAIL_BOOTS
+  - LIGHT
+  - END_GATEWAY
+  - DRAGON_EGG
+  - TALL_SEAGRASS
+  - VOID_AIR
+  - PISTON_HEAD
+  - MOVING_PISTON
+  - WRITTEN_BOOK
+  - DAMAGED_ANVIL
+  - TORCHFLOWER_SEEDS
+  - JIGSAW
+  - TIPPED_ARROW
+  - LAVA
+  - WATER_CAULDRON
+  - STRUCTURE_VOID
+  - BARRIER
+  - DEBUG_STICK
+  - BUNDLE
+  - FARMLAND
+  - STRUCTURE_BLOCK
+  - BUBBLE_COLUMN
+  - CAVE_AIR
+  - KNOWLEDGE_BOOK
+  - DIRT_PATH
